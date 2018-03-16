@@ -64,7 +64,7 @@ export default class ReverseImageSearchCommand extends AbstractCommandModule
 
         const photos = history
             .filter(m => m.attachments.length > 0)
-            .filter(m => m.attachments.every((a: any) => a.type == "photo"))
+            .filter(m => m.attachments.every((a: any) => a.type == "photo" || a.type == "image"))
             .sort((m1, m2) => m2.timestamp - m1.timestamp);
 
         if (photos.length === 0) {
@@ -72,7 +72,13 @@ export default class ReverseImageSearchCommand extends AbstractCommandModule
         }
 
         const lastPhoto = photos[0].attachments[0];
-        const url = lastPhoto.hiresUrl || lastPhoto.previewUrl || lastPhoto.thumbnailUrl;
+
+        let url;
+        try {
+            url = await this.getRuntime().getChatApi().resolvePhotoUrl(lastPhoto.attachmentID);
+        } catch (err) {
+            url = lastPhoto.hiresUrl || lastPhoto.largePreviewUrl || lastPhoto.previewUrl || lastPhoto.thumbnailUrl;
+        }
 
         if (!url) throw new Error("Could not get photo's URL");
 
