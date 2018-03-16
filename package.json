@@ -1,0 +1,49 @@
+{
+  "name": "botyo-command-reverse-image-search",
+  "version": "2.0.0-alpha.1",
+  "description": "Reverse Image Search command for Botyo",
+  "keywords": [
+    "botyo",
+    "module",
+    "extension",
+    "command",
+    "reverse",
+    "image",
+    "search",
+    "google",
+    "bing",
+    "tineye"
+  ],
+  "main": "build/ReverseImageSearchCommand.js",
+  "types": "build/ReverseImageSearchCommand.d.ts",
+  "scripts": {
+    "prebuild": "rimraf build/",
+    "build": "tsc -p .",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivkos/botyo-command-reverse-image-search.git"
+  },
+  "author": {
+    "name": "Ivaylo Stoyanov",
+    "email": "me@ivkos.com",
+    "url": "https://github.com/ivkos"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ivkos/botyo-command-reverse-image-search/issues"
+  },
+  "homepage": "https://github.com/ivkos/botyo-command-reverse-image-search#readme",
+  "dependencies": {
+    "botyo-api": "^2.0.0-alpha.34",
+    "goo.gl": "^0.1.4"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2",
+    "typescript": "^2.7.2"
+  },
+  "engines": {
+    "node": ">=6.5.0"
+  }
+}
