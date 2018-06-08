@@ -71,7 +71,7 @@ export default class ReverseImageSearchCommand extends AbstractCommandModule
             return;
         }
 
-        const lastPhoto = photos[0].attachments[0];
+        const lastPhoto: any = photos[0].attachments[0];
 
         let url;
         try {

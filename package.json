@@ -1,6 +1,6 @@
 {
   "name": "botyo-command-reverse-image-search",
-  "version": "2.0.0-alpha.2",
+  "version": "2.0.0",
   "description": "Reverse Image Search command for Botyo",
   "keywords": [
     "botyo",
@@ -36,12 +36,12 @@
   },
   "homepage": "https://github.com/ivkos/botyo-command-reverse-image-search#readme",
   "dependencies": {
-    "botyo-api": "^2.0.0-alpha.34",
+    "botyo-api": "^2.0.1",
     "goo.gl": "^0.1.4"
   },
   "devDependencies": {
     "rimraf": "^2.6.2",
-    "typescript": "^2.7.2"
+    "typescript": "^2.9.1"
   },
   "engines": {
     "node": ">=6.5.0"
